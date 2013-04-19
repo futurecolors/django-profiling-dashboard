@@ -3,10 +3,11 @@ from distutils.core import setup
 
 for cmd in ('egg_info', 'develop'):
     import sys
+
     if cmd in sys.argv:
         from setuptools import setup
 
-version='0.1'
+version = '0.1'
 
 setup(
     name='django-profiling-dashboard',
@@ -16,16 +17,16 @@ setup(
 
     packages=['profiling_dashboard'],
     package_data={
-        'profiling_dashboard': ['templates/profiling_dashboard/*.html',]
+        'profiling_dashboard': ['templates/profiling_dashboard/*.html', ]
     },
 
     url='https://github.com/kmike/django-profiling-dashboard',
-    download_url = 'https://github.com/kmike/django-profiling-dashboard/zipball/master',
-    license = 'MIT license',
-    description = """ Django profiling dashboard for debugging CPU, memory and other resources usage in live servers """,
+    download_url='https://github.com/kmike/django-profiling-dashboard/zipball/master',
+    license='MIT license',
+    description=""" Django profiling dashboard for debugging CPU, memory and other resources usage in live servers """,
 
-    long_description = open('README.rst').read(),
-    requires = ['django (>= 1.3)', 'yappi (>= 0.54)', 'psutil (>= 0.4.1)', 'pympler (>= 0.2.1)', 'query_exchange'],
+    long_description=open('README.rst').read(),
+    requires=['django (>= 1.3)', 'yappi (== 0.62)', 'psutil (== 0.7.0)', 'pympler (== 0.3.1)', 'query_exchange'],
 
     classifiers=(
         'Development Status :: 3 - Alpha',
