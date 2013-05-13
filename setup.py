@@ -1,16 +1,10 @@
 #!/usr/bin/env python
-from distutils.core import setup
+from setuptools import setup
 
-for cmd in ('egg_info', 'develop'):
-    import sys
-
-    if cmd in sys.argv:
-        from setuptools import setup
-
-version = '0.1'
+version = '1.0'
 
 setup(
-    name='django-profiling-dashboard',
+    name='django-profiling-dashboard-fc',
     version=version,
     author='Mikhail Korobov',
     author_email='kmike84@gmail.com',
@@ -26,7 +20,12 @@ setup(
     description=""" Django profiling dashboard for debugging CPU, memory and other resources usage in live servers """,
 
     long_description=open('README.rst').read(),
-    requires=['django (>= 1.3)', 'yappi (== 0.62)', 'psutil (== 0.7.0)', 'pympler (== 0.3.1)', 'query_exchange'],
+    install_requires=[
+        'django>=1.3',
+        'yappi==0.62',
+        'psutil==0.7.0',
+        'pympler==0.3.1',
+        'django-query-exchange-fc==1.0'],
 
     classifiers=(
         'Development Status :: 3 - Alpha',
